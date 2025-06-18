@@ -1,0 +1,100 @@
+<div>
+  <h1>Registration</h1>
+</div>
+<ng-container  class="container">
+<div class="form row">
+  <form [formGroup]="registration" (ngSubmit)="onSubbmit()">
+    <div class="col-6">
+      <label for="fName">First Name</label>
+      <input type="text" formControlName="fName" name="fName">
+    </div>
+    <div class="col-6">
+      <label for="lName">Last Name</label>
+      <input type="text" formControlName="lName" name="lName">
+    </div>
+    <div class="col-6">
+      <label for="age">Age</label>
+      <input type="number" formControlName="age" name="age">
+    </div>
+    <div class="col-6">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" name="email">
+    </div>
+    <div class="col-6">
+      <label for="phone">Phone</label>
+      <input type="number" formControlName="phone" name="phone">
+    </div>
+    <div class="col-6">
+      <label for="city">City</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" formControlName="city" name="city">
+          City
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" value="Mumbai">Mumbai</a>
+          <a class="dropdown-item" value="Kolkata">Kolkata</a>
+          <a class="dropdown-item" value="Delhi">Delhi</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <label for="city">gender</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male"
+          formControlName="gender">
+        <label class="form-check-label" for="inlineRadio1">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female"
+          formControlName="gender">
+        <label class="form-check-label" for="inlineRadio2">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Prefer_Not"
+          formControlName="gender">
+        <label class="form-check-label" for="inlineRadio3">Prefer Not to Say</label>
+      </div>
+    </div>
+    <Div class="col-12">
+      <label for="city" **ngIf="expression">Miltary Serviice Status</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Completed"
+          formControlName="mService">
+        <label class="form-check-label" for="inlineRadio1">Completed</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Exempt"
+          formControlName="mService">
+        <label class="form-check-label" for="inlineRadio2">Exempt</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Pending"
+          formControlName="mService">
+        <label class="form-check-label" for="inlineRadio3">Pending</label>
+      </div>
+    </Div>
+    <div class="col-6">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" name="password">
+    </div>
+    <div class="col-6">
+      <label for="cPassword">Confirm Password</label>
+      <input type="password" formControlName="cPassword" name="cPassword">
+    </div>
+  </form>
+</div>
+</ng-container>
+
+<!-- First Name - [Required, Exactly 5 characters]
+ Last Name - [Max 10 characters]
+ Age - [Required, Between 17-20]
+ Email - [Required, Validate email format]
+ Phone - [Max 10 digits, Allow only numbers]
+ City (Dropdown) - Options: ['Mumbai','Kolkata','Delhi'] [Required]
+ Gender - [Required] Options: ['Male', 'Female', 'Prefer Not to Say']
+ Miltary Serviice Status - [Conditional Field - Required only when Gender = 'Male']
+o Options: ['Completed', 'Exempt', 'Pending']
+o This field should appear/disappear based on gender selection
+ Password - [Required, Minimum 6 characters]
+ Confirm Password - [Required, Must match Password] -->
